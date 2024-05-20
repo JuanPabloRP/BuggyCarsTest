@@ -39,25 +39,26 @@ npx playwright test
 **Descripción:** Esta prueba verifica el proceso de registro de un nuevo usuario con datos válidos.
 
 **Pasos:**
+
 1. Navegar a la página de registro.
 2. Ingresar "tester123456" en los campos de Login, First Name y Last Name.
-3. Ingresar "Arepa123456*" en los campos de Password y Confirm Password.
+3. Ingresar "Arepa123456\*" en los campos de Password y Confirm Password.
 4. Hacer clic en el botón "Register".
 
 ```javascript
-test('ValidarRegistroUsuario', async ({ page }) => {
-  await page.goto('https://buggy.justtestit.org/register');
-  await page.getByLabel('Login').click();
-  await page.getByLabel('Login').fill('tester123456');
-  await page.getByLabel('First Name').click();
-  await page.getByLabel('First Name').fill('tester123456');
-  await page.getByLabel('Last Name').click();
-  await page.getByLabel('Last Name').fill('tester123456');
-  await page.getByLabel('Password', { exact: true }).click();
-  await page.getByLabel('Password', { exact: true }).fill('Arepa123456*');
-  await page.getByLabel('Confirm Password').click();
-  await page.getByLabel('Confirm Password').fill('Arepa123456*');
-  await page.getByRole('button', { name: 'Register' }).click();
+test("ValidarRegistroUsuario", async ({ page }) => {
+  await page.goto("https://buggy.justtestit.org/register");
+  await page.getByLabel("Login").click();
+  await page.getByLabel("Login").fill("tester123456");
+  await page.getByLabel("First Name").click();
+  await page.getByLabel("First Name").fill("tester123456");
+  await page.getByLabel("Last Name").click();
+  await page.getByLabel("Last Name").fill("tester123456");
+  await page.getByLabel("Password", { exact: true }).click();
+  await page.getByLabel("Password", { exact: true }).fill("Arepa123456*");
+  await page.getByLabel("Confirm Password").click();
+  await page.getByLabel("Confirm Password").fill("Arepa123456*");
+  await page.getByRole("button", { name: "Register" }).click();
 });
 ```
 
@@ -68,25 +69,26 @@ test('ValidarRegistroUsuario', async ({ page }) => {
 **Descripción:** Esta prueba verifica que se muestra un error al intentar registrar una cuenta con una contraseña débil.
 
 **Pasos:**
+
 1. Navegar a la página de registro.
 2. Ingresar "tester12345678" en los campos de Login, First Name y Last Name.
 3. Ingresar "Arepa1#" en los campos de Password y Confirm Password.
 4. Hacer clic en el botón "Register".
 
 ```javascript
-test('ValidarRegistroContraseña', async ({ page }) => {
-  await page.goto('https://buggy.justtestit.org/register');
-  await page.getByLabel('Login').click();
-  await page.getByLabel('Login').fill('tester12345678');
-  await page.getByLabel('First Name').click();
-  await page.getByLabel('First Name').fill('tester12345678');
-  await page.getByLabel('Last Name').click();
-  await page.getByLabel('Last Name').fill('tester12345678');
-  await page.getByLabel('Password', { exact: true }).click();
-  await page.getByLabel('Password', { exact: true }).fill('Arepa1#');
-  await page.getByLabel('Confirm Password').click();
-  await page.getByLabel('Confirm Password').fill('Arepa1#');
-  await page.getByRole('button', { name: 'Register' }).click();
+test("ValidarRegistroContraseña", async ({ page }) => {
+  await page.goto("https://buggy.justtestit.org/register");
+  await page.getByLabel("Login").click();
+  await page.getByLabel("Login").fill("tester12345678");
+  await page.getByLabel("First Name").click();
+  await page.getByLabel("First Name").fill("tester12345678");
+  await page.getByLabel("Last Name").click();
+  await page.getByLabel("Last Name").fill("tester12345678");
+  await page.getByLabel("Password", { exact: true }).click();
+  await page.getByLabel("Password", { exact: true }).fill("Arepa1#");
+  await page.getByLabel("Confirm Password").click();
+  await page.getByLabel("Confirm Password").fill("Arepa1#");
+  await page.getByRole("button", { name: "Register" }).click();
 });
 ```
 
@@ -97,25 +99,26 @@ test('ValidarRegistroContraseña', async ({ page }) => {
 **Descripción:** Esta prueba verifica que se muestra un error al intentar registrar una cuenta con un nombre de usuario ya existente.
 
 **Pasos:**
+
 1. Navegar a la página de registro.
 2. Ingresar "holaaa" en los campos de Login, First Name y Last Name.
-3. Ingresar "Holaaa1234*" en los campos de Password y Confirm Password.
+3. Ingresar "Holaaa1234\*" en los campos de Password y Confirm Password.
 4. Hacer clic en el botón "Register".
 
 ```javascript
-test('ValidarRegistroUnico', async ({ page }) => {
-  await page.goto('https://buggy.justtestit.org/register');
-  await page.getByLabel('Login').click();
-  await page.getByLabel('Login').fill('holaaa');
-  await page.getByLabel('First Name').click();
-  await page.getByLabel('First Name').fill('holaaa');
-  await page.getByLabel('Last Name').click();
-  await page.getByLabel('Last Name').fill('holaaa');
-  await page.getByText('Password Password is required').click();
-  await page.getByLabel('Password', { exact: true }).fill('Holaaa1234*');
-  await page.getByLabel('Confirm Password').click();
-  await page.getByLabel('Confirm Password').fill('Holaaa1234*');
-  await page.getByRole('button', { name: 'Register' }).click();
+test("ValidarRegistroUnico", async ({ page }) => {
+  await page.goto("https://buggy.justtestit.org/register");
+  await page.getByLabel("Login").click();
+  await page.getByLabel("Login").fill("holaaa");
+  await page.getByLabel("First Name").click();
+  await page.getByLabel("First Name").fill("holaaa");
+  await page.getByLabel("Last Name").click();
+  await page.getByLabel("Last Name").fill("holaaa");
+  await page.getByText("Password Password is required").click();
+  await page.getByLabel("Password", { exact: true }).fill("Holaaa1234*");
+  await page.getByLabel("Confirm Password").click();
+  await page.getByLabel("Confirm Password").fill("Holaaa1234*");
+  await page.getByRole("button", { name: "Register" }).click();
 });
 ```
 
@@ -126,6 +129,7 @@ test('ValidarRegistroUnico', async ({ page }) => {
 **Descripción:** Esta prueba verifica la actualización del perfil de un usuario, incluyendo nombre, apellido, hobby, teléfono y dirección.
 
 **Pasos:**
+
 1. Navegar a la página de registro.
 2. Ingresar "testuser778" en el campo de Login.
 3. Ingresar "Test.1234" en el campo de Password.
@@ -136,40 +140,43 @@ test('ValidarRegistroUnico', async ({ page }) => {
 8. Cerrar sesión.
 
 ```javascript
-test('actualizar perfil test', async ({ page }) => {
-	await page.goto('https://buggy.justtestit.org/register');
-	await page.getByPlaceholder('Login').click();
-	await page.getByPlaceholder('Login').fill('testuser778');
-	await page.getByRole('navigation').locator('input[name="password"]').click();
-	await page.getByRole('navigation').locator('input[name="password"]').fill('Test.1234');
-	await page.getByRole('button', { name: 'Login' }).click();
-	await page.getByRole('link', { name: 'Profile' }).click();
-	await page.getByLabel('First Name').dblclick();
-	await page.getByLabel('First Name').fill('nuevo user');
-	await page.getByLabel('Last Name').click();
-	await page.getByLabel('Last Name').fill('new usuario');
-	await page.getByLabel('Hobby').selectOption('Video Games');
-	await page.locator('fieldset').filter({ hasText: 'Phone' }).click();
-	await page.getByLabel('Phone').fill('3128400000');
-	await page.getByLabel('Address').click();
-	await page.getByLabel('Address').fill('Direccion tal con tin');
-	await page.getByRole('button', { name: 'Save' }).click();
-	await page.getByLabel('First Name').click();
-	await page.getByLabel('First Name').fill('');
-	await page.getByLabel('Last Name').click();
-	await page.getByLabel('Last Name').fill('');
-	await page.getByLabel('First Name').click();
-	await page.getByLabel('First Name').fill(' ');
-	await page.getByText('Last Name is required').click();
-	await page.getByLabel('Last Name').click();
-	await page.getByLabel('Last Name').fill(' ');
-	await page.getByLabel('Address').click();
-	await page.getByLabel('Address').fill(' ');
-	await page.getByRole('button', { name: 'Save' }).click();
-	await page.getByLabel('Phone').click();
-	await page.getByLabel('Phone').fill('');
-	await page.getByRole('button', { name: 'Save' }).click();
-	await page.getByRole('link', { name: 'Logout' }).click();
+test("actualizar perfil test", async ({ page }) => {
+  await page.goto("https://buggy.justtestit.org/register");
+  await page.getByPlaceholder("Login").click();
+  await page.getByPlaceholder("Login").fill("testuser778");
+  await page.getByRole("navigation").locator('input[name="password"]').click();
+  await page
+    .getByRole("navigation")
+    .locator('input[name="password"]')
+    .fill("Test.1234");
+  await page.getByRole("button", { name: "Login" }).click();
+  await page.getByRole("link", { name: "Profile" }).click();
+  await page.getByLabel("First Name").dblclick();
+  await page.getByLabel("First Name").fill("nuevo user");
+  await page.getByLabel("Last Name").click();
+  await page.getByLabel("Last Name").fill("new usuario");
+  await page.getByLabel("Hobby").selectOption("Video Games");
+  await page.locator("fieldset").filter({ hasText: "Phone" }).click();
+  await page.getByLabel("Phone").fill("3128400000");
+  await page.getByLabel("Address").click();
+  await page.getByLabel("Address").fill("Direccion tal con tin");
+  await page.getByRole("button", { name: "Save" }).click();
+  await page.getByLabel("First Name").click();
+  await page.getByLabel("First Name").fill("");
+  await page.getByLabel("Last Name").click();
+  await page.getByLabel("Last Name").fill("");
+  await page.getByLabel("First Name").click();
+  await page.getByLabel("First Name").fill(" ");
+  await page.getByText("Last Name is required").click();
+  await page.getByLabel("Last Name").click();
+  await page.getByLabel("Last Name").fill(" ");
+  await page.getByLabel("Address").click();
+  await page.getByLabel("Address").fill(" ");
+  await page.getByRole("button", { name: "Save" }).click();
+  await page.getByLabel("Phone").click();
+  await page.getByLabel("Phone").fill("");
+  await page.getByRole("button", { name: "Save" }).click();
+  await page.getByRole("link", { name: "Logout" }).click();
 });
 ```
 
@@ -180,6 +187,7 @@ test('actualizar perfil test', async ({ page }) => {
 **Descripción:** Esta prueba verifica la actualización de la contraseña de un usuario, incluyendo la contraseña actual, la nueva contraseña y la confirmación de la nueva contraseña.
 
 **Pasos:**
+
 1. Navegar a la página principal.
 2. Ingresar "testuser778" en el campo de Login.
 3. Ingresar "Test.1234" en el campo de Password.
@@ -249,6 +257,7 @@ button', { name: 'Login' }).click();
 **Descripción:** Esta prueba verifica la actualización del nombre y apellido de un usuario, asegurándose de que no estén vacíos.
 
 **Pasos:**
+
 1. Navegar a la página principal.
 2. Ingresar "testuser778" en el campo de Login.
 3. Ingresar "Test.1234" en el campo de Password.
@@ -259,26 +268,26 @@ button', { name: 'Login' }).click();
 8. Cerrar sesión.
 
 ```javascript
-test('Actualizar nombre y apellido', async ({ page }) => {
-	await page.goto('https://buggy.justtestit.org/');
-	await page.getByPlaceholder('Login').click();
-	await page.getByPlaceholder('Login').fill('testuser778');
-	await page.locator('input[name="password"]').click();
-	await page.locator('input[name="password"]').fill('');
-	await page.locator('input[name="password"]').click();
-	await page.locator('input[name="password"]').fill('Test.1234');
-	await page.getByRole('button', { name: 'Login' }).click();
-	await page.getByRole('link', { name: 'Profile' }).click();
-	await page.getByLabel('First Name').click();
-	await page.getByLabel('First Name').fill('');
-	await page.getByLabel('Last Name').click();
-	await page.getByLabel('Last Name').fill('');
-	await page.getByLabel('First Name').click();
-	await page.getByLabel('First Name').fill(' ');
-	await page.getByText('Last Name is required').click();
-	await page.getByLabel('Last Name').click();
-	await page.getByLabel('Last Name').fill(' ');
-	await page.getByRole('button', { name: 'Save' }).click();
-	await page.getByRole('link', { name: 'Logout' }).click();
+test("Actualizar nombre y apellido", async ({ page }) => {
+  await page.goto("https://buggy.justtestit.org/");
+  await page.getByPlaceholder("Login").click();
+  await page.getByPlaceholder("Login").fill("testuser778");
+  await page.locator('input[name="password"]').click();
+  await page.locator('input[name="password"]').fill("");
+  await page.locator('input[name="password"]').click();
+  await page.locator('input[name="password"]').fill("Test.1234");
+  await page.getByRole("button", { name: "Login" }).click();
+  await page.getByRole("link", { name: "Profile" }).click();
+  await page.getByLabel("First Name").click();
+  await page.getByLabel("First Name").fill("");
+  await page.getByLabel("Last Name").click();
+  await page.getByLabel("Last Name").fill("");
+  await page.getByLabel("First Name").click();
+  await page.getByLabel("First Name").fill(" ");
+  await page.getByText("Last Name is required").click();
+  await page.getByLabel("Last Name").click();
+  await page.getByLabel("Last Name").fill(" ");
+  await page.getByRole("button", { name: "Save" }).click();
+  await page.getByRole("link", { name: "Logout" }).click();
 });
 ```
